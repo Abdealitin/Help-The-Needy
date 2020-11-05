@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:background="@drawable/dottedadd"
+            android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
             android:cropToPadding="false"
             android:src="@drawable/dottedadd" />
 

@@ -10,13 +10,14 @@
         android:layout_width="342dp"
         android:layout_height="46dp"
         android:layout_marginTop="20dp"
+        android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/signupButton"
-        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="@+id/signupButton"
         app:layout_constraintTop_toBottomOf="@+id/signupButton"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.913">
 
         <TextView
             android:id="@+id/textView3"
@@ -66,7 +67,7 @@
         android:id="@+id/userName"
         android:layout_width="334dp"
         android:layout_height="56dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="60dp"
         android:autofillHints=""
         android:background="@drawable/input_outline"
         android:ems="10"
@@ -74,34 +75,22 @@
         android:inputType="textPersonName"
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-    <EditText
-        android:id="@+id/editTextTextEmailAddress2"
-        android:layout_width="334dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/input_outline"
-        android:ems="10"
-        android:hint="@string/Email"
-        android:inputType="textEmailAddress"
-        android:padding="15dp"
-        app:layout_constraintEnd_toEndOf="@+id/userName"
-        app:layout_constraintStart_toStartOf="@+id/userName"
-        app:layout_constraintTop_toBottomOf="@+id/userName" />
 
     <EditText
         android:id="@+id/editTextTextPassword2"
         android:layout_width="334dp"
         android:layout_height="56dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/input_outline"
         android:ems="10"
         android:hint="@string/Password"
         android:inputType="textPassword"
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress2"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress2"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
 
@@ -109,37 +98,22 @@
         android:id="@+id/spin"
         android:layout_width="334dp"
         android:layout_height="56dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/input_outline"
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword2"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
-
-    <Button
-        android:id="@+id/signupButton"
-        android:layout_width="88dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:background="@drawable/button_corners"
-        android:text="@string/sign"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/radioGrouoID"
-        app:layout_constraintVertical_bias="0.0" />
 
     <RadioGroup
         android:id="@+id/radioGrouoID"
         android:layout_width="0dp"
         android:layout_height="44dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="@+id/spin"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/spin"
         app:layout_constraintTop_toBottomOf="@+id/spin">
 
@@ -158,5 +132,36 @@
             android:text="@string/donator"
             android:textSize="18sp" />
     </RadioGroup>
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress2"
+        android:layout_width="334dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/input_outline"
+        android:ems="10"
+        android:hint="@string/Email"
+        android:inputType="textEmailAddress"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/userName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/userName"
+        app:layout_constraintTop_toBottomOf="@+id/userName" />
+
+    <Button
+        android:id="@+id/signupButton"
+        android:layout_width="140dp"
+        android:layout_height="51dp"
+        android:background="@drawable/button_corners"
+        android:text="@string/sign"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/radioGrouoID"
+        app:layout_constraintVertical_bias="0.428" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

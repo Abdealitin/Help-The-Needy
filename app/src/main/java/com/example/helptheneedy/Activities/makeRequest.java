@@ -57,7 +57,7 @@ public class makeRequest extends AppCompatActivity {
 
         mProgress = new ProgressDialog(this);
 
-        mRequestDatabase = FirebaseDatabase.getInstance().getReference().child("Request");
+        mRequestDatabase = FirebaseDatabase.getInstance().getReference().child("Requests");
 
         mRequestImage = (ImageButton) findViewById(R.id.imageButton);
         mRequestTitle  = (TextView) findViewById(R.id.requestTitle);

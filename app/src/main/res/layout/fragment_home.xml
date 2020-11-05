@@ -8,15 +8,16 @@
 
     <TextView
         android:id="@+id/text_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="318dp"
+        android:layout_height="38dp"
+        android:gravity="center"
         android:text="Requests Will Shown up here"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.91"
+        app:layout_constraintVertical_bias="0.471"
         tools:visibility="invisible" />
 
     <androidx.recyclerview.widget.RecyclerView

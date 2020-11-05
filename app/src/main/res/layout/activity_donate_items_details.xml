@@ -6,32 +6,118 @@
     android:layout_height="match_parent"
     tools:context=".DonateItemsDetails">
 
-    <LinearLayout
-        android:layout_width="298dp"
-        android:layout_height="561dp"
-        android:orientation="vertical"
+    <EditText
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="332dp"
+        android:layout_height="49dp"
+        android:background="@drawable/input_outline"
+        android:ems="10"
+        android:hint="Location"
+        android:inputType="textPersonName"
+        android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+        app:layout_constraintVertical_bias="0.742" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="332dp"
+        android:layout_height="49dp"
+        android:padding="15dp"
+        android:background="@drawable/input_outline"
+        android:ems="10"
+        android:hint="Donor name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+        app:layout_constraintVertical_bias="0.064" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="332dp"
+        android:layout_height="49dp"
+        android:padding="15dp"
+        android:background="@drawable/input_outline"
+        android:ems="10"
+        android:hint="@string/Food_Items"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+        app:layout_constraintVertical_bias="0.235" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="274dp"
+        android:layout_height="121dp"
+        android:background="@drawable/input_outline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.57">
+        app:layout_constraintVertical_bias="0.163"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="308dp"
+        android:layout_height="143dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+        app:layout_constraintVertical_bias="0.497">
 
         <TextView
-            android:id="@+id/textView8"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="25dp"
-            android:text="@string/Food_Items" />
+            android:id="@+id/textView6"
+            android:layout_width="296dp"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="TextView"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="Having food containers?" />
 
-        <TextView
-            android:id="@+id/textView9"
+        <RadioButton
+            android:id="@+id/radioButton4"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:text="@string/Food_Quantity" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:text="Yes" />
+
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No" />
+
+        <RadioButton
+            android:id="@+id/radioButton6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Can Arrange" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="426dp"
+        android:background="@drawable/button_corners"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+        app:layout_constraintVertical_bias="0.567" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

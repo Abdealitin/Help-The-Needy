@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.helptheneedy.Activities.homePage;
 import com.example.helptheneedy.Data.RequestRecyclerAdapter;
 import com.example.helptheneedy.Model.Request;
+import com.example.helptheneedy.Model.User;
 import com.example.helptheneedy.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -25,13 +28,21 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static android.widget.Toast.*;
+
 public class HomeFragment extends Fragment {
+    private TextView userName;
+    private TextView userEmail;
+    private ImageView profilePic;
+    private TextView utype;
     private DatabaseReference mDatabaseReference;
+    private DatabaseReference mDatabaseReference1;
     private RecyclerView recyclerView;
     private RequestRecyclerAdapter requestRecyclerAdapter;
     private List<Request> requestList;
@@ -43,12 +54,19 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        //View view = inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.nav_header_main, container, false);
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
-
         mDatabase = FirebaseDatabase.getInstance();
-        mDatabaseReference = mDatabase.getReference().child("Request");
+
+        utype = (TextView) view.findViewById(R.id.utypeText);
+        userName = (TextView) view.findViewById(R.id.userName);
+        userEmail = (TextView) view.findViewById(R.id.userMail);
+
+
+
+
+        mDatabaseReference = mDatabase.getReference().child("Requests");
         mDatabaseReference.keepSynced(true);
 
 
@@ -81,6 +99,31 @@ public class HomeFragment extends Fragment {
                 requestRecyclerAdapter = new RequestRecyclerAdapter(recyclerView.getContext(), requestList);
                 recyclerView.setAdapter(requestRecyclerAdapter);
                 requestRecyclerAdapter.notifyDataSetChanged();
+                mDatabaseReference1 = mDatabase.getInstance().getReference();
+                mDatabaseReference1.child("Users").child(mUser.getUid()).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.exists()){
+                    /*for(DataSnapshot userDetails : dataSnapshot.getChildren()){
+                        userName.setText(userDetails.child("Username").getValue().toString());
+                        utype.setText(userDetails.child("UserType").getValue().toString());
+                        userEmail.setText(userDetails.child("Email").getValue().toString());
+                    }*/
+                    /*userName.setText(dataSnapshot.child("Username").getValue().toString());
+                    utype.setText(dataSnapshot.child("UserType").getValue().toString());
+                    userEmail.setText(dataSnapshot.child("Email").getValue().toString());*/
+                            String UName= dataSnapshot.child("Username").getValue().toString();
+                            User user= new User();
+                            user.setUsername(UName);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
             }
 
             @Override

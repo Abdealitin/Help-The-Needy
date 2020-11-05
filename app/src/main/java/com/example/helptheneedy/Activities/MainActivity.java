@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 if(mUser != null){
                     Toast.makeText(MainActivity.this, "Signed In", Toast.LENGTH_SHORT).show();
                     openActivity1();
+                    finish();
                 }else{
                     Toast.makeText(MainActivity.this, "Not Signed In", Toast.LENGTH_SHORT).show();
                 }
@@ -106,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
         if(mAuthListener != null){
             mAuth.removeAuthStateListener(mAuthListener);
-            mAuth.signOut();
+            //mAuth.signOut();
         }
     }
 }

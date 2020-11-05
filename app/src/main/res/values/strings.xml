@@ -33,6 +33,7 @@
     <string name="register_radio1">Organization</string>
     <string name="register_radio2">Donator</string>
     <string-array name="cities">
+        <item>City</item>
         <item>Bhopal</item>
         <item>Gwalior</item>
         <item>Guwahati</item>

@@ -21,6 +21,7 @@ import com.example.helptheneedy.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -97,12 +98,12 @@ public class usersign extends AppCompatActivity implements AdapterView.OnItemSel
             @Override
             public void onClick(View v) {
                 final String uname = userName.getText().toString().trim();
-                String emailString = email.getText().toString().trim();
+                final String emailString = email.getText().toString().trim();
                 String pwd = password.getText().toString().trim();
                 final String utype = ((RadioButton)findViewById(radioGroup.getCheckedRadioButtonId())).getText().toString();
                 final String city = spin.getSelectedItem().toString();
 
-                if(!emailString.equals("") && !pwd.equals("")){
+                if(!emailString.equals("") && !pwd.equals("") && !city.equals("City")){
                     mProgressDialog.setMessage("Creating Account...");
                     mProgressDialog.show();
                     mAuth.createUserWithEmailAndPassword(emailString,pwd).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
@@ -114,15 +115,20 @@ public class usersign extends AppCompatActivity implements AdapterView.OnItemSel
                                 currentUserDB.child("Username").setValue(uname);
                                 currentUserDB.child("UserType").setValue(utype);
                                 currentUserDB.child("City").setValue(city);
-                                currentUserDB.child("Image").setValue("none");
+                                currentUserDB.child("Email").setValue(emailString);
+                                //currentUserDB.child("Image").setValue("@drawable/donator_logo");
                                 mProgressDialog.dismiss();
 
                                 Intent intent = new Intent(usersign.this, homePage.class);
                                 intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
+                                finish();
                             }
                         }
                     });
+                }else {
+                    Toast.makeText(usersign.this, "Please fill out all fields!", Toast.LENGTH_SHORT).show();
+                    //Snackbar.make(v, "Please fill out all the fields!", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                 }
 
 
